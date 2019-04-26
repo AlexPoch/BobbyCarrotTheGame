@@ -16,7 +16,7 @@ public:
 	Texture texture; // SFML объект Texture(текстура)
 	Sprite sprite; // // SFML объект Sprite(спрайт)
 	objMap(String File) { // конструктор класса с аргументом File || File - название изображения с расширением
-		image.loadFromFile("Images/" + File); // загрузка изображения по пути
+		image.loadFromFile("../game/Images/" + File); // загрузка изображения по пути
 		texture.loadFromImage(image); // установка текстуры из изображения
 		sprite.setTexture(texture); // установка спрайта из текстуры
 	}
@@ -37,7 +37,7 @@ public:
 	Player(String F, float X, float Y, float W, float H) {
 		File = F;
 		w = W; h = H;
-		image.loadFromFile("Images/" + File);
+		image.loadFromFile("../game/Images/" + File);
 		image.createMaskFromColor(Color(255, 0, 255));
 		texture.loadFromImage(image);
 		sprite.setTexture(texture);
@@ -135,7 +135,7 @@ public:
 
 int main()
 {
-	RenderWindow window(VideoMode(1200, 1000), "Game"); // создание окна размером 600 х 600 пикселей
+	RenderWindow window(VideoMode(1200, 1000), "Game");
 	menu(window); // отображение меню
 	view.reset(FloatRect(0, 200, 500, 500));//обновление слежения камеры за персонажем
 
@@ -144,12 +144,12 @@ int main()
 	objMap Map("map.png"); // создание объекта Map класса objMap
 
 	Music music; // создание объекта музыки
-	music.openFromFile("Sounds/main.ogg"); // загрузка файла фоновой музыки
+	music.openFromFile("../game/Sounds/main.ogg"); // загрузка файла фоновой музыки
 	music.play(); // запуск музыки
 	music.setLoop(true);
 
 	Font font; // создание объекта шрифта
-	font.loadFromFile("arial.ttf"); // загрузка шрифта по адресу 
+	font.loadFromFile("../game/arial.ttf"); // загрузка шрифта по адресу 
 	//Для моркови
 	Text text("", font, 30); // создание объекта текст с параметрами ( "текст" , шрифт , размер шрифта )
 	text.setFillColor(Color::White); // цвет текста
@@ -164,7 +164,7 @@ int main()
 	text2.setStyle(Text::Bold);
 
 	Image carrot_image; 
-	carrot_image.loadFromFile("Images/Rabbit.png");
+	carrot_image.loadFromFile("../game/Images/Rabbit.png");
 	carrot_image.createMaskFromColor(Color(255, 0, 255)); // создание маски (прозрачности) для цвета по схеме RGB (red , green , blue )
 	Texture carrot_texture;
 	carrot_texture.loadFromImage(carrot_image);
@@ -174,7 +174,7 @@ int main()
 
 	//ФИНИШ УРОВНЯ
 	Image lev_Finish;
-	lev_Finish.loadFromFile("Images/levelFinish.png");
+	lev_Finish.loadFromFile("../game/Images/levelFinish.png");
 	lev_Finish.createMaskFromColor(Color(185, 122, 87));
 	Texture leve_Finish;
 	leve_Finish.loadFromImage(lev_Finish);

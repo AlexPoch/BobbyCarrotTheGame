@@ -4,11 +4,11 @@ using namespace sf;
 
 void menu(RenderWindow &window) {
 	Texture  menuNewGameTexture, menuAboutProgrammTexture, menuExitTexture, devListTexture, menuBackground;
-	menuNewGameTexture.loadFromFile("Images/newGame.png");
-	menuAboutProgrammTexture.loadFromFile("Images/aboutProgramm.png");
-	menuExitTexture.loadFromFile("Images/exit.png");
-	devListTexture.loadFromFile("Images/devList.png");
-	menuBackground.loadFromFile("Images/menu.png");
+	menuNewGameTexture.loadFromFile("../game/Images/newGame.png");
+	menuAboutProgrammTexture.loadFromFile("../game/Images/aboutProgramm.png");
+	menuExitTexture.loadFromFile("../game/Images/exit.png");
+	devListTexture.loadFromFile("../game/Images/devList.png");
+	menuBackground.loadFromFile("../game/Images/menu.png");
 	Sprite newGame(menuNewGameTexture), aboutProgramm(menuAboutProgrammTexture), exit(menuExitTexture), devList(devListTexture), menuBg(menuBackground);
 	bool isMenu = 1; // показывать меню
 	int menuNum = 0; // вкладка из меню
